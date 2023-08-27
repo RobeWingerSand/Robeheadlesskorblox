@@ -1,0 +1,73 @@
+-- headless and korblox
+-- Robe:3.2
+
+-- Instances:
+
+local Main = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Korblox = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Headless = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+Main.Name = "Main"
+Main.Parent = game.CoreGui
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Main
+MainFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+MainFrame.Position = UDim2.new(0.0751346573, 0, 0.743494451, 0)
+MainFrame.Size = UDim2.new(0, 163, 0, 109)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+UICorner.Parent = MainFrame
+
+Korblox.Name = "Korblox"
+Korblox.Parent = MainFrame
+Korblox.BackgroundColor3 = Color3.fromRGB(73, 12, 255)
+Korblox.Position = UDim2.new(0.0858895704, 0, 0.0825688019, 0)
+Korblox.Size = UDim2.new(0, 134, 0, 42)
+Korblox.Font = Enum.Font.GothamBlack
+Korblox.Text = "Korblox"
+Korblox.TextColor3 = Color3.fromRGB(255, 255, 255)
+Korblox.TextSize = 23.000
+Korblox.TextWrapped = true
+Korblox.MouseButton1Click:Connect(function()
+	local ply = game.Players.LocalPlayer
+	local chr = ply.Character
+	chr.RightLowerLeg.MeshId = "902942093"
+	chr.RightLowerLeg.Transparency = "1"
+	chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+	chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+	chr.RightFoot.MeshId = "902942089"
+	chr.RightFoot.Transparency = "1"
+end)
+
+UICorner_2.Parent = Korblox
+
+Headless.Name = "Headless"
+Headless.Parent = MainFrame
+Headless.BackgroundColor3 = Color3.fromRGB(73, 12, 255)
+Headless.Position = UDim2.new(0.0858895704, 0, 0.522935808, 0)
+Headless.Size = UDim2.new(0, 134, 0, 42)
+Headless.Font = Enum.Font.GothamBlack
+Headless.Text = "Headless"
+Headless.TextColor3 = Color3.fromRGB(255, 255, 255)
+Headless.TextSize = 23.000
+Headless.TextWrapped = true
+Headless.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Head.Transparency = 1
+	game.Players.LocalPlayer.Character.Head.Transparency = 1
+	for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+		if (v:IsA("Decal")) then
+			v.Transparency = 1
+		end
+	end
+end)
+
+UICorner_3.Parent = Headless
